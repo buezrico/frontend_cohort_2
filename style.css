@@ -1,0 +1,69 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+  color: blue;
+  font-size: 48px;
+  background-color: yellow;
+  letter-spacing: 10px;
+}
+
+h2 {
+  color: blue;
+  font-size: 64px;
+  text-align: center;
+}
+
+/* button {
+  background-color: teal;
+  color: whitesmoke;
+  padding: 16px 48px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: transparent;
+  border: 2px solid teal;
+  color: teal;
+} */
+
+button {
+  background-color: red;
+  height: 40px;
+  width: 150px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  border: 4px solid red;
+}
+
+p {
+  font-size: 24px;
+  font-family: Verdana;
+  font-weight: bold;
+  color: burlywood;
+  text-align: start;
+  text-decoration: underline;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.second-paragraph {
+  color: blue;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
