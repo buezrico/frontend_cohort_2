@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f4f7;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 90%;
+  flex-direction: row;
+}
+
+.title {
+  width: 45%;
+}
+
+.title img {
+  height: 50px;
+  margin-bottom: 16px;
+}
+
+.title p {
+  color: #1c1e21;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.login-form {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.login-form form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(0, 0, 0, 0.1) 0px 8px 16px 0px;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.login-form form input {
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid #8a8d91;
+  font-size: 16px;
+}
+
+.login-form form .login-btn {
+  color: white;
+  background-color: #0866ff;
+  border: none;
+  border-radius: 5px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-form form a {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  color: #0866ff;
+  margin: 10px;
+}
+
+.login-form form a:hover {
+  text-decoration: underline;
+}
+
+.login-form form .create-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form form .create-btn {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #42b72a;
+}
+
+.page {
+  width: 80%;
+  margin-top: 25px;
+  padding: 0 16px;
+}
+
+.page p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.page p a {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1000px) {
+  /* MEDIA QUESRY STARTS HERE */
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .login-form {
+    width: 60%;
+    align-items: center;
+  }
+
+  /* MEDIA QUESRY ENDS HERE */
+}
+
+@media screen and (max-width: 768px) {
+  .title img {
+    height: 35px;
+  }
+
+  .title p {
+    font-size: 20px;
+  }
+
+  .login-form {
+    width: 100%;
+  }
+
+  .login-form form input {
+    font-size: 14px;
+  }
+
+  .login-form form .login-btn {
+    background-color: red;
+    font-size: 16px;
+  }
+}
