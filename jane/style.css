@@ -44,6 +44,28 @@ nav {
   font-weight: 700;
 }
 
+.nav-btn {
+  display: none;
+  font-size: 24px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  background-color: white;
+  color: #202020;
+}
+
+.nav-btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
 .hero {
   height: 100vh;
   width: 100%;
@@ -59,7 +81,6 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  position: relative;
 }
 
 .hero-title {
@@ -71,8 +92,9 @@ nav {
 }
 
 button {
-  background-color: transparent;
-  color: white;
+  background-color: white;
+  color: #202020;
+
   border: 1px solid white;
   padding: 12px 32px;
   font-size: 16px;
@@ -82,28 +104,58 @@ button {
 }
 
 button:hover {
-  background-color: white;
-  color: #202020;
+  background-color: transparent;
+  color: white;
 }
 
 .socials {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  position: absolute;
-  bottom: -100px;
+  position: fixed;
   right: 0;
+  top: 45%;
+  color: #202020;
 }
 
-.socials i {
+.social-link {
+  background-color: white;
+  position: fixed;
+  right: 0;
+  width: 150px;
+  transform: translateX(120px);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 16px;
+  gap: 48px;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
-.socials i:hover {
-  color: #cccaca;
+
+.facebook {
+  top: 40%;
+}
+.instagram {
+  top: 45%;
+}
+.twitter {
+  top: 50%;
+}
+.social-link span {
+  font-weight: 600;
+}
+
+.social-link:hover {
+  transform: translateX(0);
+  width: fit-content;
+  gap: 8px;
+  padding-right: 16px;
 }
 
 .about-me {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -115,6 +167,7 @@ button:hover {
   height: 100%;
   width: 80%;
   display: flex;
+  align-items: center;
 }
 
 .about-img,
@@ -146,12 +199,13 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 32px;
 }
 
 .gallery-inner {
   width: 80%;
   height: 100%;
-  padding: 32px 0;
+  padding: 64px 0;
   display: grid;
   grid-gap: 32px;
   grid-template-columns: repeat(3, 1fr);
@@ -160,7 +214,7 @@ button:hover {
 .gallery-inner img {
   height: 300px;
   width: 100%;
-  border: 2px solid green;
+  border: 2px solid white;
 }
 
 .contact-me {
@@ -178,7 +232,7 @@ button:hover {
   justify-content: space-between;
 }
 
-.conatct-title,
+.contact-title,
 .contact-form {
   width: 50%;
   height: 100%;
@@ -250,4 +304,71 @@ footer p {
   color: #acaaaa;
   font-size: 12px;
   padding: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-inner ul {
+    display: none;
+  }
+
+  .nav-btn {
+    display: flex;
+  }
+
+  .hero {
+    background-image: url("/assets/asset2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+
+  .hero-inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me-inner {
+    flex-direction: column;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .gallery-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-me-inner {
+    flex-direction: column;
+  }
+  .contact-title,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-title {
+    align-items: center;
+    margin-bottom: 48px;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  button {
+    width: 100%;
+  }
+  .gallery-inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-group input,
+  textarea {
+    width: unset;
+  }
 }
