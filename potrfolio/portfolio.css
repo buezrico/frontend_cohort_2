@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 45%;
+}
+
+.hero-contents h2 {
+  font-size: 4rem;
+}
+.hero-contents h2 span {
+  font-family: "Fascinate Inline";
+  color: teal;
+}
+
+.hero-contents h3 {
+  font-size: 1.5rem;
+  animation: bounceInLeft;
+  animation-duration: 3s;
+}
+
+.hero-contents button {
+  width: fit-content;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  /* box-shadow: 0 0 1px teal, 0 0 5px teal, 0 0 10px teal, 0 0 0 teal; */
+  -webkit-box-reflect: below 2px linear-gradient(transparent, black);
+}
+
+.img {
+  width: 45%;
+  height: 70%;
+}
+
+.img img {
+  height: 100%;
+  width: 90%;
+  /* border-radius: 50%; */
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-right: 5px solid white;
+  border-left: 5px solid white;
+  padding: 16px;
+  animation: bounceInRight;
+  animation-duration: 3s;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column-reverse;
+    padding: 10% 5%;
+  }
+
+  .hero-contents {
+    width: 100%;
+    margin-top: 5rem;
+    align-items: center;
+  }
+  .img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .img img {
+    border-radius: unset;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    padding-bottom: 0;
+  }
+
+  .hero-contents button {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .img {
+    width: 70%;
+    height: 40%;
+  }
+}
