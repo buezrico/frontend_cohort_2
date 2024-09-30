@@ -4,9 +4,27 @@
 }
 
 body {
-  background: #000;
+  background-color: black;
   color: white;
   font-family: "Montserrat", sans-serif;
+}
+
+.light {
+  background-color: rgb(236, 231, 231);
+  color: black;
+}
+
+.theme-icons {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  padding: 1rem;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.theme-icons:hover {
+  opacity: 80%;
 }
 
 .container {
@@ -48,6 +66,10 @@ body {
   /* box-shadow: 0 0 1px teal, 0 0 5px teal, 0 0 10px teal, 0 0 0 teal; */
   -webkit-box-reflect: below 2px linear-gradient(transparent, black);
 }
+.hero-contents-light button {
+  background-color: black;
+  color: white;
+}
 
 .img {
   width: 45%;
@@ -65,6 +87,11 @@ body {
   padding: 16px;
   animation: bounceInRight;
   animation-duration: 3s;
+}
+
+.img-light img {
+  border-right: 5px solid black;
+  border-left: 5px solid black;
 }
 
 @media screen and (max-width: 1024px) {
