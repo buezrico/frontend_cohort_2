@@ -1,7 +1,29 @@
 /* eslint-disable react/prop-types */
+import { LuDelete } from "react-icons/lu";
 import "../App.css";
 
-const Buttons = ({ value, setValue }) => {
+const Buttons = ({ value, result, setValue, setResult }) => {
+  const calculate = () => {
+    try {
+      const result = eval(value);
+      setResult(result);
+    } catch (error) {
+      console.log(error);
+      setValue("Syntax error");
+    }
+  };
+
+  const clear = () => {
+    setValue((prevValue) => {
+      if (prevValue.length === 1 || result !== "") {
+        return "0";
+      }
+
+      return prevValue.slice(0, -1);
+    });
+    setResult("");
+  };
+
   return (
     <div className="grid grid-cols-4 place-items-center gap-2">
       {buttons.map((button, index) => (
@@ -17,13 +39,24 @@ const Buttons = ({ value, setValue }) => {
           `}
           onClick={() => {
             button.name === "clear"
-              ? setValue("")
-              : setValue(
-                  (prevValue) => prevValue.toString() + button.value.toString()
+              ? clear()
+              : button.value === "="
+              ? calculate()
+              : setValue((prevValue) =>
+                  prevValue === "0"
+                    ? button.value.toString()
+                    : prevValue.toString() + button.value.toString()
                 );
           }}
         >
-          {button.value}
+          {result === "" &&
+          button.name === "clear" &&
+          value !== "0" &&
+          value.length > 0 ? (
+            <LuDelete size={24} />
+          ) : (
+            button.value
+          )}
         </button>
       ))}
     </div>
