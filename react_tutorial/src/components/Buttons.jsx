@@ -1,21 +1,39 @@
 /* eslint-disable react/prop-types */
 import { LuDelete } from "react-icons/lu";
 import "../App.css";
+import { useState } from "react";
 
 const Buttons = ({ value, result, setValue, setResult }) => {
+  const [error, setError] = useState(false);
+
   const calculate = () => {
     try {
       const result = eval(value);
       setResult(result);
     } catch (error) {
       console.log(error);
+      setError(true);
       setValue("Syntax error");
     }
   };
 
+  const addNumber = (value) => {
+    if (error) {
+      setError(false);
+      setValue("0");
+    }
+    !result &&
+      setValue((prevValue) =>
+        prevValue === "0"
+          ? value.toString()
+          : prevValue.toString() + value.toString()
+      );
+  };
+
   const clear = () => {
     setValue((prevValue) => {
-      if (prevValue.length === 1 || result !== "") {
+      if (prevValue.length === 1 || result !== "" || error) {
+        setError(false);
         return "0";
       }
 
@@ -42,16 +60,13 @@ const Buttons = ({ value, result, setValue, setResult }) => {
               ? clear()
               : button.value === "="
               ? calculate()
-              : setValue((prevValue) =>
-                  prevValue === "0"
-                    ? button.value.toString()
-                    : prevValue.toString() + button.value.toString()
-                );
+              : addNumber(button.value);
           }}
         >
           {result === "" &&
           button.name === "clear" &&
           value !== "0" &&
+          !error &&
           value.length > 0 ? (
             <LuDelete size={24} />
           ) : (
